@@ -87,7 +87,7 @@ def worker():
 #get_shows('jpqs', t2, 58)
 
 get_shows('atj', atj_urls, get_last(atj_urls))
-get_shows('jpqs', jps_urls, get_last(atj_urls))
+get_shows('jpqs', jpqs_urls, get_last(atj_urls))
 
 for i in range(8):
      t = Thread(target=worker)
