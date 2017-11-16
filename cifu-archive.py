@@ -16,11 +16,12 @@ import re
 logging.basicConfig(level=logging.DEBUG,
                     format='%(asctime)s [%(levelname)s] (%(threadName)-10s) %(message)s',
                     )
+# Updated URL as per 16.11.2017
+atj_urls = Template('http://www.rtve.es/alacarta/interno/contenttable.shtml?ctx=1999&locale=es&pageSize=15&order=3&orderCriteria=ASC')
+#atj_urls = Template('http://www.rtve.es/alacarta/interno/contenttable.shtml?pbq=$i&ctx=1875&locale=es&resetFilter=true')
+#jpqs_urls = Template('http://www.rtve.es/alacarta/interno/contenttable.shtml?pbq=$i&orderCriteria=DESC&modl=TOC&locale=es&pageSize=15&ctx=1999')
 
-atj_urls = Template('http://www.rtve.es/alacarta/interno/contenttable.shtml?pbq=$i&ctx=1875&locale=es&resetFilter=true')
-jpqs_urls = Template('http://www.rtve.es/alacarta/interno/contenttable.shtml?pbq=$i&orderCriteria=DESC&modl=TOC&locale=es&pageSize=15&ctx=1999')
-
-locale.setlocale(locale.LC_TIME, 'es_ES')
+#locale.setlocale(locale.LC_TIME, 'es_ES')
 invalid_chars = '*/'
 
 q = Queue()
@@ -81,7 +82,7 @@ def worker():
 #get_shows('atj', t1, 45)
 #get_shows('jpqs', t2, 58)
 get_shows('atj', atj_urls, get_last(atj_urls))
-get_shows('jpqs', jpqs_urls, get_last(jpqs_urls))
+#get_shows('jpqs', jpqs_urls, get_last(jpqs_urls))
 
 for i in range(8):
      t = Thread(target=worker)
