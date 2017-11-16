@@ -17,7 +17,7 @@ logging.basicConfig(level=logging.DEBUG,
                     format='%(asctime)s [%(levelname)s] (%(threadName)-10s) %(message)s',
                     )
 # Updated URL as per 16.11.2017
-atj_urls = Template('http://www.rtve.es/alacarta/interno/contenttable.shtml?ctx=1999&locale=es&pageSize=15&order=3&orderCriteria=ASC')
+atj_urls = Template('http://www.rtve.es/alacarta/interno/contenttable.shtml?pbq=1&order=3&orderCriteria=ASC&modl=TOC&locale=es&pageSize=15&ctx=1999')
 #atj_urls = Template('http://www.rtve.es/alacarta/interno/contenttable.shtml?pbq=$i&ctx=1875&locale=es&resetFilter=true')
 #jpqs_urls = Template('http://www.rtve.es/alacarta/interno/contenttable.shtml?pbq=$i&orderCriteria=DESC&modl=TOC&locale=es&pageSize=15&ctx=1999')
 
