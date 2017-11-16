@@ -22,12 +22,7 @@ atj_urls = Template('http://www.rtve.es/alacarta/interno/contenttable.shtml?pbq=
 # last: http://www.rtve.es/alacarta/interno/contenttable.shtml?pbq=43&order=3&orderCriteria=ASC&modl=TOC&locale=es&pageSize=15&ctx=1999
 # template: http://www.rtve.es/alacarta/interno/contenttable.shtml?pbq=$i&order=3&orderCriteria=ASC&modl=TOC&locale=es&pageSize=15&ctx=1999
 
-#atj_urls = Template('http://www.rtve.es/alacarta/interno/contenttable.shtml?pbq=$i&ctx=1875&locale=es&resetFilter=true')
-
-# Updated URL as per 16.11.2017
-#jpqs_urls = Template('http://www.rtve.es/alacarta/interno/contenttable.shtml?pbq=1&order=3&orderCriteria=ASC&modl=TOC&locale=es&pageSize=15&ctx=47454')
-#jpqs_urls = Template('http://www.rtve.es/alacarta/interno/contenttable.shtml?pbq=$i&orderCriteria=DESC&modl=TOC&locale=es&pageSize=15&ctx=1999')
-
+# NA (removed locale set)
 #locale.setlocale(locale.LC_TIME, 'es_ES')
 invalid_chars = '*/'
 
@@ -88,8 +83,8 @@ def worker():
 
 #get_shows('atj', t1, 45)
 #get_shows('jpqs', t2, 58)
+
 get_shows('atj', atj_urls, get_last(atj_urls))
-#get_shows('jpqs', jpqs_urls, get_last(jpqs_urls))
 
 for i in range(8):
      t = Thread(target=worker)
